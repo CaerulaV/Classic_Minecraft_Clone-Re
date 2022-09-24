@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+this is just a demo, go to realeses page: https://github.com/CaerulaV/Classic_Minecraft_Clone-Re/releases
 
 <!--
 CCM_COCO-RE-V092422B5U0.html
