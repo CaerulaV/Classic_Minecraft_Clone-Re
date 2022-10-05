@@ -1,13 +1,12 @@
-this is just a demo, go to realeses page: https://github.com/CaerulaV/Classic_Minecraft_Clone-Re/releases
-
+<!DOCTYPE html>
+This is just a demo, see realese page for more
 <!--
-CCM_COCO-RE-V092422B5U0.html
 -->
 
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Baisically Minecraft [Now with Minecraft textures!]</title>
+		<title>Baisically Classic Minecraft</title>
 		<link id="vtfont" href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 	</head>
 	<style>
@@ -203,22 +202,22 @@ ctx.canvas.height = window.innerHeight
 //THESE ARE IMPORTANT VARIABLES TOUCHING THEM CAN CRASH
 var MathGlob = Math
 var INVsize=20
-var HomeTitle ="Classic " //this is just to big to fit
+var HomeTitle =" " //this is just to big to fit
 var HomeTitleFont="VT323,monospace"
 var HomeTitleFontShade = 30
-var EditionName="CCM"
+var EditionName="Baisically Minecraft"
 var GameType="[Sandbloxa 3D]"
 var V =""
-var Buildedition ="RE-V092422B5U0"
+var Buildedition ="V3 - EARLY REALESE!!"
 var sky1 =0
-var sky2 =1
-var sky3 =1
+var sky2 =0
+var sky3 =0
 var sky4 =0
 var caveSize =2
 //how far you can build/break
 var REACH =10
 //crossHair variables
-var CROSS_COLOR ="black"
+var CROSS_COLOR ="white"
 var updatelist ="Removed bugs"
 var crossh =15
 var cross1 =crossh
@@ -227,9 +226,9 @@ var cross3 =crossh
 var cross4 =crossh
 //player variables
 var sped =0.175
-if(sky2 ===0.80){
-    sky2===0.10
-}else{sky2===0.70}
+if(sky2 ===0.00){
+    sky2===0.00
+}else{sky2===0.00}
 
 //something I amworking on
 
@@ -676,13 +675,12 @@ var dbm =false
         		for(i=0;i<256;++i) {
         			let t = perm[j = rnd.nextInt() & 0xFF]; perm[j] = perm[i]; perm[i] = t
         		}
-        		// copy to avoid taking mod in perm[0]
         		for(i=0;i<256;++i) {
         			perm[i + 256] = perm[i]
         		}
         
         		function grad3d(i,x,y,z) {
-        			let h = i & 15; // convert into 12 gradient directions
+        			let h = i & 15; //directions
         			let u = h<8 ? x : y,
         				v = h<4 ? y : h===12||h===14 ? x : z
         			return ((h&1) === 0 ? u : -u) + ((h&2) === 0 ? v : -v)
@@ -1072,7 +1070,7 @@ var dbm =false
         	let width = window.innerWidth
         	let height = window.innerHeight
         //removed because it is very annoying
-        	if (height === 400) var fillin //alert("La pantalla es demasiado pequeÃ±a")
+        	if (height === 400) var fillin //alert("La pantalla es demasiado pequeña")
         
         	let generator = {
         		height: HILLS, // Height of the hills
@@ -4486,8 +4484,9 @@ Button.add(width / 2, 3750, 300, 40, "Save Code", "pause", r => {
         		//Button.add(width / 2, 395, width / 3, 40, "", "multiplayer menu", r => changeScene("main menu"))
         
         		// Settings Sliders
-        		text("...", 300 ,200, 0, 0)
-        		Slider.add(685, 210, 30, 50, "options", "Render", 1, 5, "renderDistance", val => settings.renderDistance = Math.round(val))
+        		text("Loading...", 220 ,230, 0, 0)
+        		//alert("Welcome! The game is now running. Press ESC to show cursor. Press C to crouch. Z to zoom. And you know how to move. Arrow keys to look around (and mouse) Q to sprint. Not all functions are working in this realese. Thank you for playing BCM "+V+" (c) 2021 AiFF")
+        		Slider.add(300, 210, 30, 50, "options", "Render", 1, 5, "renderDistance", val => settings.renderDistance = Math.round(val))
         		Slider.add(width/2, 150, 30, 50, "options", "FOV", 0, 140, "fov", val => {
         			p.FOV(val)
         			if (world) {
@@ -4533,7 +4532,6 @@ Button.add(width / 2, 3750, 300, 40, "Save Code", "pause", r => {
         		};
         
         		{
-        			// Specify the texture coords for each index
         			const s = scale
         			for (let i = 0; i < 256; i++) {
         				let texX = i & 15
@@ -4543,7 +4541,7 @@ Button.add(width / 2, 3750, 300, 40, "Save Code", "pause", r => {
         				textureCoords.push(new Float32Array([ offsetX, offsetY, offsetX + s, offsetY, offsetX + s, offsetY + s, offsetX, offsetY + s ]))
         			}
         
-        			// Set all of the textures into 1 big tiled texture
+        			// Set all of the textures into 1 big texture
         			let n = 0
         			for (let i in textures) {
         				if (typeof textures[i] === "function") {
@@ -4631,7 +4629,7 @@ Button.add(width / 2, 3750, 300, 40, "Save Code", "pause", r => {
         
         		// Crosshair
         		if (!p.spectator) {
-        			ctx.lineWidth = 1
+        			ctx.lineWidth = 2
         			ctx.strokeStyle = CROSS_COLOR
         			ctx.beginPath()
         			ctx.moveTo(x - cross1, y)
@@ -4643,8 +4641,8 @@ Button.add(width / 2, 3750, 300, 40, "Save Code", "pause", r => {
         		}
         
         		//Hotbar
-        		x = width / 2 - 9 / 2 * s + 0.5 + 25
-        		y = height - s * 1.5 + 0.5
+        		x = width  / 2 - 9 / 2 * s + 0.5 + 25
+        		y = height  - s * 1.5 + 0.5
         
         		ctx.strokeStyle = "CROSS_COLOR"
         		ctx.lineWidth = 2
@@ -4660,7 +4658,7 @@ Button.add(width / 2, 3750, 300, 40, "Save Code", "pause", r => {
         		ctx.stroke()
         
         		ctx.strokeStyle = "CROSS_COLOR"
-        		ctx.lineWidth = 2
+        		ctx.lineWidth = 0.000000001
         		ctx.beginPath()
         
 ctx.strokeRect(width / 12 - 9 / 2 * s + inventory.hotbarSlot * s + 25, height+10 - s * 1.5, s, s)
@@ -4866,7 +4864,7 @@ let str = //"AFT: " + analytics.displayedFrameTime + "ms\n"
         					newWorldBlock()
         				}
         			}
-        		} else if (screen === "inventory") {
+        		} else if (screen === "") {
         			clickInv()
         		}
         
@@ -4896,12 +4894,12 @@ let str = //"AFT: " + analytics.displayedFrameTime + "ms\n"
         		if (e.repeat || Key[k]) {
         			return
         		}
+                //texture realode
         		Key[k] = true
         
         		if (k === "t") {
         			initTextures()
         		}
-        
         		if (k === "") {
         			blockMode = blockMode === CUBE ? SLAB : (blockMode === SLAB ? STAIR : CUBE)
         			updateHUD = true
@@ -5245,12 +5243,12 @@ let str = //"AFT: " + analytics.displayedFrameTime + "ms\n"
         		p.previousZ = 8
         		p.w = 3 / 8
         		p.bottomH = 1.62
-        		p.topH = 0.18
+        		p.topH = 2.62
         		p.onGround = false
         		p.jumpSpeed = 0.3
         		p.sprinting = false
         		p.maxYVelocity = 0.5
-        		p.gravityStength = -0.022
+        		p.gravityStength = -0.03
         		p.lastUpdate = win.performance.now()
         		p.lastBreak = Date.now()
         		p.lastPlace = Date.now()
