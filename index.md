@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 This is just a demo, see realese page for more
 <!--
 -->
@@ -6,7 +6,7 @@ This is just a demo, see realese page for more
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Baisically Classic Minecraft</title>
+		<title>CCM - Beta</title>
 		<link id="vtfont" href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 	</head>
 	<style>
@@ -202,13 +202,13 @@ ctx.canvas.height = window.innerHeight
 //THESE ARE IMPORTANT VARIABLES TOUCHING THEM CAN CRASH
 var MathGlob = Math
 var INVsize=20
-var HomeTitle =" " //this is just to big to fit
+var HomeTitle ="Classic" //this is just to big to fit
 var HomeTitleFont="VT323,monospace"
 var HomeTitleFontShade = 30
-var EditionName="Baisically Minecraft"
-var GameType="[Sandbloxa 3D]"
-var V =""
-var Buildedition ="V3 - EARLY REALESE!!"
+var EditionName="Beta"
+var GameType="CCM"
+var V ="V100422B2U2"
+var Buildedition ="V100422B2U2"
 var sky1 =0
 var sky2 =0
 var sky3 =0
